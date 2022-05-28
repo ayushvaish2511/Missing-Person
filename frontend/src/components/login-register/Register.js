@@ -22,7 +22,7 @@ const Register = () => {
 
   let DEBUG = false;
 
-  let disabled = !password || !email || !username || !phone || loading;
+  let disabled = !password || !email || !username  || loading;
 
   const handleSubmit = (e) => {
     e.preventDefault();
