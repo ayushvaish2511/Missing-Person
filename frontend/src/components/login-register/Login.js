@@ -1,5 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { createBrowserHistory } from 'history';
+import {  useNavigate } from 'react-router-dom';
+   
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import { AppStateContext } from '../../contexts/AppStateContext';
@@ -13,6 +15,8 @@ import axios from 'axios';
 let history = createBrowserHistory();
 
 const Login = () => {
+  const navigate = useNavigate();
+  
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [successMsg, setSuccessMsg] = useState('');
@@ -33,18 +37,18 @@ const Login = () => {
     
     // axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
     axios.post("https://missing-backend-personnel.herokuapp.com/api/login",{
-          email: email,
+          username: email,
           password: password
         })
         .then(result=>{
           console.log(result)
+          navigate('/');
         })
         .catch(error=>{
           console.log(error)
         })
       };
 
-  history.replace('/');
 
   return (
     <main className='formMain'>
@@ -72,9 +76,9 @@ const Login = () => {
               </label>
               <input
                 className='formInput'
-                type='email'
-                name='email'
-                placeholder='email'
+                type='name'
+                name='name'
+                placeholder='username'
                 value={email}
                 required
                 onChange={(event) => setEmail(event.target.value)}

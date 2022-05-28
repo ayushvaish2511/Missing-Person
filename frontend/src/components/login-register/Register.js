@@ -24,8 +24,8 @@ const Register = () => {
 
   let disabled = !password || !email || !username  || loading;
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
+    // e.preventDefault();
     
     // axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
     axios.post("https://missing-backend-personnel.herokuapp.com/api/signup",{
@@ -39,9 +39,9 @@ const Register = () => {
         .catch(error=>{
           console.log(error)
         })
+        navigate('/login');
       };
 
-      history.replace('/login');
   
 
   return (
