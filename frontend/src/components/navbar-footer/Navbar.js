@@ -13,6 +13,20 @@ const Navbar = (props) => {
     const [modalOpen, setModalOpen] = useState(false);
     
     const { transparent } = props;
+    const [name, setName] = useState('');
+
+
+    useEffect(() => {
+      const Name = localStorage.getItem("name");
+     
+      
+  
+     
+      setName(Name);
+     
+     
+      console.log(Name)
+    }, []);
 
     let DEBUG = false;
 
@@ -23,8 +37,8 @@ const Navbar = (props) => {
             <>
                 <li className='navList'><Link className={className} to='/lostandfound' onClick={() => setHamburgerOpen(!hamburgerOpen)}>Lost & Found</Link></li>
                 <Modal className={className} />
-                <li className='navList'><Link className={className} to='/login' onClick={() => setHamburgerOpen(!hamburgerOpen)}>Login</Link></li>
-                <li className='navList'><Link className={className} to='/register' onClick={() => setHamburgerOpen(!hamburgerOpen)}>Register</Link></li>     
+                {/* <li className='navList'><Link className={className} to='/login' onClick={() => setHamburgerOpen(!hamburgerOpen)}>{name?name:"LOGIN/REGISTER"}</Link></li> */}
+                <li className='navList'><Link className={className} to='/register' onClick={() => setHamburgerOpen(!hamburgerOpen)}>{name?name:"LOGIN/REGISTER"}</Link></li>     
             </>
         )
     }

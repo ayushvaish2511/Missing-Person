@@ -11,6 +11,7 @@ import BackgroundImages from './BackgroundImages';
 import PasswordShowHide from './PasswordShowHide';
 import { ReactComponent as EmailIcon } from '../../assets/icons/email.svg';
 import axios from 'axios';
+import { setUserSession1 } from '../../utils/Common';
 
 let history = createBrowserHistory();
 
@@ -32,6 +33,8 @@ const Login = () => {
 
   if (DEBUG) console.log(setToken);
 
+  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     
@@ -42,6 +45,7 @@ const Login = () => {
         })
         .then(result=>{
           console.log(result)
+          setUserSession1(email)
           navigate('/');
         })
         .catch(error=>{

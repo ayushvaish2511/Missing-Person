@@ -22,6 +22,7 @@ import PetReport from './components/report_pet/PetReport';
 import PetLandingPage from './components/landing_page/PetLandingPage';
 import PetProfile from './components/lost_and_found/PetProfile';
 import Dashboard from './components/dashboard/Dashboard';
+import Report from './components/report_pet/report'
 
 function App() {
   const { token } = useContext(AuthContext);
@@ -66,6 +67,17 @@ function App() {
                   <>
                     <Navbar />
                     <PetHome />
+                    <Footer />
+                  </>
+                }
+              ></Route>
+
+              <Route
+                path='/reportperson'
+                element={
+                  <>
+                    <Navbar />
+                    <Report />
                     <Footer />
                   </>
                 }
