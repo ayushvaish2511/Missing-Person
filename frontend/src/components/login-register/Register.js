@@ -40,6 +40,8 @@ const Register = () => {
           console.log(error)
         })
       };
+
+      history.replace('/login');
   
 
   return (

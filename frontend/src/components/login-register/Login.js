@@ -44,7 +44,7 @@ const Login = () => {
         })
       };
 
-  history.replace('/login');
+  history.replace('/');
 
   return (
     <main className='formMain'>
