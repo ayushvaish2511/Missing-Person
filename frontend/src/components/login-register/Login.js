@@ -32,7 +32,6 @@ const Login = () => {
     
     // axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
     axios.post("https://missing-backend-personnel.herokuapp.com/api/login",{
-      username: username,
           email: email,
           password: password
         })
