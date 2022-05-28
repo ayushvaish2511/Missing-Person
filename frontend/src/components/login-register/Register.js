@@ -91,16 +91,7 @@ const Register = () => {
               <label className='formLabel' htmlFor='phone'>
                 <PhoneIcon />
               </label>
-              <input
-                className='formInput'
-                type='tel'
-                name='phone'
-                placeholder='phone'
-                value={phone}
-                minLength=''
-                required
-                onChange={(event) => setPhone(event.target.value)}
-              />
+             
             </div>
             <PasswordShowHide password={password} setPassword={setPassword} />
             <div
