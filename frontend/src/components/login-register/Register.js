@@ -8,7 +8,7 @@ import PasswordShowHide from './PasswordShowHide';
 import { ReactComponent as EmailIcon } from '../../assets/icons/email.svg';
 import { ReactComponent as UsernameIcon } from '../../assets/icons/username.svg';
 import { ReactComponent as PhoneIcon } from '../../assets/icons/phone.svg';
-
+import axios from 'axios';
 const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

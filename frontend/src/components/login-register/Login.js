@@ -8,6 +8,7 @@ import Logo from '../generic/Logo';
 import BackgroundImages from './BackgroundImages';
 import PasswordShowHide from './PasswordShowHide';
 import { ReactComponent as EmailIcon } from '../../assets/icons/email.svg';
+import axios from 'axios';
 
 let history = createBrowserHistory();
 
