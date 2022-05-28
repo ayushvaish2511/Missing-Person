@@ -82,7 +82,7 @@ const Login = () => {
             <PasswordShowHide password={password} setPassword={setPassword} />
             <div>
               <button
-                type='submit'
+               onClick={handleSubmit}
                 className={disabled ? 'formButtonInactive' : 'formButton'}
                 disabled={disabled}
               >
