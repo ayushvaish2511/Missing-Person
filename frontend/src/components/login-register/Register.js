@@ -87,21 +87,16 @@ const Register = () => {
                 onChange={(event) => setUsername(event.target.value)}
               />
             </div>
-            <div className='inputBox'>
-              <label className='formLabel' htmlFor='phone'>
-                <PhoneIcon />
-              </label>
-             
-            </div>
-            <PasswordShowHide password={password} setPassword={setPassword} />
-            <div
-              className={
-                password ? 'acceptedPasswordTextActive' : 'acceptedPasswordText'
-              }
-            >
-              At least 8 characters, must contain one upper-case and one
-              lower-case letter, one digit and one special character.
-            </div>
+            
+            <input
+                className='formInput'
+                type='password'
+                name='password'
+                placeholder='password'
+                value={password}
+                required
+                onChange={(event) => setPassword(event.target.value)}
+              />
             <div>
               <button
                 onClick={handleSubmit}

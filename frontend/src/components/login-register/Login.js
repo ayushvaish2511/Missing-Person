@@ -64,7 +64,7 @@ const Login = () => {
             <p className='errorMessage'>{errorMsg}</p>
             <p className='successMessage'>{successMsg}</p>
           </div>
-          <form method='POST' onSubmit={handleSubmit}>
+          <form >
             <div className='inputBox'>
               <label className='formLabel' htmlFor='email'>
                 <EmailIcon />
@@ -79,7 +79,15 @@ const Login = () => {
                 onChange={(event) => setEmail(event.target.value)}
               />
             </div>
-            <PasswordShowHide password={password} setPassword={setPassword} />
+            <input
+                className='formInput'
+                type='password'
+                name='password'
+                placeholder='password'
+                value={password}
+                required
+                onChange={(event) => setPassword(event.target.value)}
+              />
             <div>
               <button
                onClick={handleSubmit}
