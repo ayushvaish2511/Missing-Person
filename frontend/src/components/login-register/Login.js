@@ -27,28 +27,22 @@ const Login = () => {
 
   if (DEBUG) console.log(setToken);
 
-  function handleSubmit(event) {
-    event.preventDefault();
-
-    if (!disabled) {
-      setLoading(true);
-      loginUser({
-        setToken,
-        email,
-        pw: password,
-        successCallback: () => {
-          setLoading(false);
-          setEmail('');
-          setPassword('');
-        },
-        errorCallback: (err) => {
-          setLoading(false);
-          clearError();
-          handleError(err, setErrorMsg);
-        },
-      });
-    }
-  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    // axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
+    axios.post("https://missing-backend-personnel.herokuapp.com/api/login",{
+      username: username,
+          email: email,
+          password: password
+        })
+        .then(result=>{
+          console.log(result)
+        })
+        .catch(error=>{
+          console.log(error)
+        })
+      };
 
   history.replace('/login');
 

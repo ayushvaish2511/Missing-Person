@@ -13,7 +13,6 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
-  const [phone, setPhone] = useState('');
   const [successMsg, setSuccessMsg] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
   const [loading, setLoading] = useState(false);
@@ -25,40 +24,23 @@ const Register = () => {
 
   let disabled = !password || !email || !username || !phone || loading;
 
-  function handleSubmit(event) {
-    event.preventDefault();
-
-    if (!disabled) {
-      setLoading(true);
-      registerUser({
-        email,
-        username,
-        phone,
-        pw: password,
-        successCallback: (res) => {
-          setErrorMsg('');
-          setSuccessMsg(res);
-          setLoading(false);
-        },
-        successTimeout: () =>
-          setTimeout(() => {
-            setEmail('');
-            setUsername('');
-            setPhone('');
-            setPassword('');
-            setSuccessMsg('');
-            navigate('/login');
-          }, 1500),
-        errorCallback: (err) => {
-          setLoading(false);
-          clearError();
-          handleError(err, setErrorMsg);
-        },
-      });
-    }
-  }
-
-  if (DEBUG) console.log('errorMsg', errorMsg);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    // axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
+    axios.post("https://missing-backend-personnel.herokuapp.com/api/signup",{
+      username: username,
+          email: email,
+          password: password
+        })
+        .then(result=>{
+          console.log(result)
+        })
+        .catch(error=>{
+          console.log(error)
+        })
+      };
+  
 
   return (
     <main className='formMain'>
@@ -75,11 +57,8 @@ const Register = () => {
               Login Now
             </Link>
           </div>
-          <div className='message'>
-            <p className='errorMessage'>{errorMsg}</p>
-            <p className='successMessage'>{successMsg}</p>
-          </div>
-          <form method='POST' onSubmit={handleSubmit}>
+        
+          <form  >
             <div className='inputBox'>
               <label className='formLabel' htmlFor='email'>
                 <EmailIcon />
@@ -134,7 +113,7 @@ const Register = () => {
             </div>
             <div>
               <button
-                type='submit'
+                onClick={handleSubmit}
                 className={disabled ? 'formButtonInactive' : 'formButton'}
                 disabled={disabled}
               >
