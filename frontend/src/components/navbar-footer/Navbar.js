@@ -45,10 +45,10 @@ const Navbar = (props) => {
         return (
             <>
             <a href='https://face-reco-1.herokuapp.com/'>
-            <li><Link className={className}  onClick={() => setHamburgerOpen(!hamburgerOpen)}>Lost & Found</Link></li>
+            <li><Link className={className}  to='https://face-reco-1.herokuapp.com/' onClick={() => setHamburgerOpen(!hamburgerOpen)}>Find Person</Link></li>
 
             </a>
-                <li><Link className={className} to='/reportperson' onClick={() => setHamburgerOpen(!hamburgerOpen)}>Report Pet</Link></li>
+                <li><Link className={className} to='/reportperson' onClick={() => setHamburgerOpen(!hamburgerOpen)}>Report Person</Link></li>
                 <li className='navList'><Link className={className} to='/register' onClick={() => setHamburgerOpen(!hamburgerOpen)}>{name?name:"LOGIN/REGISTER"}</Link></li>     
             </>
         )
