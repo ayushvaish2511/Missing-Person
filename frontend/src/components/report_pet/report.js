@@ -20,6 +20,11 @@ const Login = () => {
 
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
+    const [name1, setName1] = useState('');
+    const [img, setImg] = useState('');
+
+
+
     const [phone, setPhone] = useState('');
     const [location, setLocation] = useState('');
 
@@ -36,19 +41,38 @@ const Login = () => {
         e.preventDefault();
 
         // axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
-        axios.post("https://missing-backend-personnel.herokuapp.com/api/login", {
-           
+        axios.post("https://missing-backend-personnel.herokuapp.com/api/tour", {
+
             name: name,
             phone: phone,
             email: email,
             location: location,
-            
+
 
         })
             .then(result => {
                 console.log(result)
-               
+
                 navigate('/');
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    };
+
+    const handleSubmit1 = (e) => {
+        e.preventDefault();
+
+        // axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
+        axios.post("https://file-upload-personnel.herokuapp.com/", {
+
+            name: name,
+            file: img
+        })
+            .then(result => {
+                console.log(result)
+
+
             })
             .catch(error => {
                 console.log(error)
@@ -65,11 +89,11 @@ const Login = () => {
                 </div>
                 <div className='loginFormBox'>
                     <h2 className='formHeadline'>Report a Person</h2>
-                   
-                   
+
+
                     <form >
                         <div className='inputBox'>
-                           
+
                             <input
                                 className='formInput'
                                 type='name'
@@ -91,7 +115,7 @@ const Login = () => {
                         />
                         <input
                             className='formInput'
-                            type='number'
+                            type='phone'
                             name='phone'
                             placeholder='Phone'
                             value={phone}
@@ -108,6 +132,30 @@ const Login = () => {
                             required
                             onChange={(event) => setLocation(event.target.value)}
                         />
+
+
+
+                        
+                        <input
+                                className='formInput'
+                                type='name'
+                                name='name'
+                                placeholder='Name of image'
+                                value={name1}
+                                required
+                                onChange={(event) => setName1(event.target.value)}
+                            />
+
+                            <input encType="multipart/form-data" className='formInput' type="file" id="file" name="file" value={img} onChange={(event)=> setImg(event.target.value)}  required />
+
+                            <button
+                                onClick={handleSubmit1}
+                                className={'formButton'}
+                                disabled={disabled}
+                            >
+                                Upload Image
+                            </button>
+                        
 
                         <div>
                             <button

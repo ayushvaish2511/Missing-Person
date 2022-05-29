@@ -7,8 +7,7 @@ import { Link } from 'react-router-dom';
 import Modal from './Modal';
 
 const Navbar = (props) => {
-    const { token, handleLogOut } = useContext(AuthContext);
-    const { username } = useContext(AppStateContext);
+  
     const [hamburgerOpen, setHamburgerOpen] = useState(false);
     const [modalOpen, setModalOpen] = useState(false);
     
@@ -30,15 +29,14 @@ const Navbar = (props) => {
 
     let DEBUG = false;
 
-    if (DEBUG) console.log('USERNAME NAVBAR', username);
+   
 
     function returnUnprotectedLinks(className) {
         return (
             <>
-                <li className='navList'><Link className={className} to='/lostandfound' onClick={() => setHamburgerOpen(!hamburgerOpen)}>Lost & Found</Link></li>
-                <Modal className={className} />
+               
                 {/* <li className='navList'><Link className={className} to='/login' onClick={() => setHamburgerOpen(!hamburgerOpen)}>{name?name:"LOGIN/REGISTER"}</Link></li> */}
-                <li className='navList'><Link className={className} to='/register' onClick={() => setHamburgerOpen(!hamburgerOpen)}>{name?name:"LOGIN/REGISTER"}</Link></li>     
+               
             </>
         )
     }
@@ -46,10 +44,9 @@ const Navbar = (props) => {
     function returnProtectedLinks(className, buttonClassName) {
         return (
             <>
-                <li><Link className={className} to='/lostandfound' onClick={() => setHamburgerOpen(!hamburgerOpen)}>Lost & Found</Link></li>
-                <li><Link className={className} to='/reportpet' onClick={() => setHamburgerOpen(!hamburgerOpen)}>Report Pet</Link></li>
-                <li><Link className={className} to='/dashboard' onClick={() => setHamburgerOpen(!hamburgerOpen)}>Dashboard</Link></li>
-                <li><button className={buttonClassName} onClick={() => {handleLogOut(); setHamburgerOpen(!hamburgerOpen)}}>Log Out</button></li>  
+                <li><Link className={className} to='URL for script' onClick={() => setHamburgerOpen(!hamburgerOpen)}>Lost & Found</Link></li>
+                <li><Link className={className} to='/reportperson' onClick={() => setHamburgerOpen(!hamburgerOpen)}>Report Pet</Link></li>
+                <li className='navList'><Link className={className} to='/register' onClick={() => setHamburgerOpen(!hamburgerOpen)}>{name?name:"LOGIN/REGISTER"}</Link></li>     
             </>
         )
     }
@@ -86,7 +83,7 @@ const Navbar = (props) => {
     return (  
         <div>
             <div className={transparent ? 'navigationWithoutPicture' : 'navigationWithPicture'}>
-                {!token ?
+                {
                     <>
                         <Link className='navLogo' to='/' onClick={() => setHamburgerOpen(!hamburgerOpen)}>
                             <PetPawLogo className='navLogoInner'/>
@@ -95,14 +92,12 @@ const Navbar = (props) => {
                                 () => returnUnprotectedLinks('navLinkDesktop', 'logOutButtonDesktop'),
                                 () => returnUnprotectedLinks('navLinkMobile', 'logOutButtonMobile')
                             )}
-                    </>
-                    :
-                    <>
+                   
                         <div className='navPositionLeft'>
                             <Link className='navLogo' to='/lostandfound' onClick={() => setHamburgerOpen(!hamburgerOpen)}>
                                 <PetPawLogo className='navLogoInner'/>
                             </Link>
-                            <li className='username'>Hi {username}!</li>
+                           
                         </div>
                             {isNavbarOpen(hamburgerOpen, 
                                 () => returnProtectedLinks('navLinkDesktop', 'logOutButtonDesktop'),
