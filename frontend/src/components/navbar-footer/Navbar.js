@@ -44,7 +44,7 @@ const Navbar = (props) => {
     function returnProtectedLinks(className, buttonClassName) {
         return (
             <>
-                <li><Link className={className} to='URL for script' onClick={() => setHamburgerOpen(!hamburgerOpen)}>Lost & Found</Link></li>
+                <li><Link className={className} to='https://face-reco-1.herokuapp.com/' onClick={() => setHamburgerOpen(!hamburgerOpen)}>Lost & Found</Link></li>
                 <li><Link className={className} to='/reportperson' onClick={() => setHamburgerOpen(!hamburgerOpen)}>Report Pet</Link></li>
                 <li className='navList'><Link className={className} to='/register' onClick={() => setHamburgerOpen(!hamburgerOpen)}>{name?name:"LOGIN/REGISTER"}</Link></li>     
             </>
