@@ -1,30 +1,30 @@
-import React from 'react';
-import { isInputEmpty } from '../HelperFunctions.js';
+// import React from 'react';
+// import { isInputEmpty } from '../HelperFunctions.js';
 
-const PetUserData = (props) => {
-    const { user } = props;
+// const PetUserData = (props) => {
+//     const { user } = props;
 
-    let DEBUG = false;
+//     let DEBUG = false;
 
-        return (
-            <>
-                <td className='tableCell' style={{paddingTop: '50px'}}>
-                </td>
-                    <tr className='petOptionalInfo'>
-                        {isInputEmpty('user ID', ('#' + user.id), 'tableCell')}
-                    </tr>
-                    <tr className='petOptionalInfo'>
-                        {isInputEmpty('user', (user.username), 'tableCell')}
-                    </tr>
-                    <tr className='petOptionalInfo'>
-                        {isInputEmpty('email', (user.email), 'tableCell')}
-                    </tr>
-                    <tr className='petOptionalInfo'>
-                        {isInputEmpty('phone', (user.phone), 'tableCell')}
-                    </tr>
-            </>
-        )
-}
+//         return (
+//             <>
+//                 <td className='tableCell' style={{paddingTop: '50px'}}>
+//                 </td>
+//                     <tr className='petOptionalInfo'>
+//                         {isInputEmpty('user ID', ('#' + user.id), 'tableCell')}
+//                     </tr>
+//                     <tr className='petOptionalInfo'>
+//                         {isInputEmpty('user', (user.username), 'tableCell')}
+//                     </tr>
+//                     <tr className='petOptionalInfo'>
+//                         {isInputEmpty('email', (user.email), 'tableCell')}
+//                     </tr>
+//                     <tr className='petOptionalInfo'>
+//                         {isInputEmpty('phone', (user.phone), 'tableCell')}
+//                     </tr>
+//             </>
+//         )
+// }
 
 
-export default PetUserData;
+// export default PetUserData;

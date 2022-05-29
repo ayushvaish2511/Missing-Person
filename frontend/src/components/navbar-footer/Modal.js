@@ -33,7 +33,7 @@ const Modal = (props) => {
                         onClick={() => setModal(!modal)}
                     >
                         <div className='modalContent'>
-                            To report pet, please sign in.
+                            To report Person, please sign in.
                             <button 
                                 className='modalClose' 
                                 onClick={() => setModal(!modal)}>

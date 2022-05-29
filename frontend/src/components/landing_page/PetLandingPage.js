@@ -1,5 +1,5 @@
 import React from 'react';
-import Video from '../../assets/video/dogvideo.mp4';
+import Video from '../../assets/video/2.mp4';
 
 const PetLandingPage = () => {
 
@@ -8,7 +8,7 @@ const PetLandingPage = () => {
     return (
         <div>
             <div>
-                 <h1 className='landingPageHeadline'>Find Your<br/>Lost Pet</h1>
+                 <h1 className='landingPageHeadline'>Find<br/>Missing Person</h1>
                 <video className='landingPageVideo' autoPlay loop muted>
                     <source src={Video} type='video/mp4'/>
                 </video>

@@ -9,7 +9,7 @@ const Footer = (props) => {
     return (
         <div className={transparent ? 'footerWithPicture' : 'footerWithoutPicture'}>
             <div className='footerText'>
-                &copy; {new Date().getFullYear()} Lost & Found by Lilla Németh
+                &copy; {new Date().getFullYear()} 
             </div>
         </div>
     );
