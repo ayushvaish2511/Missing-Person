@@ -8,6 +8,11 @@ Since I didn't have access of any Traffic Cameras, therefore here I have used my
 ## Site Link
 https://missing-person-personnel.herokuapp.com/
 
+## Github Repos ALso used in this
+https://github.com/ayushvaish2511/Face-Reco   -   For the Face Recogination Model
+https://github.com/ayushvaish2511/Missing-person-backend   -    For Missing-Person Backend
+https://github.com/ayushvaish2511/File-upload   -   Backend of Files uploading to the database
+
 ## Available Scripts
 
 In the project directory, you can run:
