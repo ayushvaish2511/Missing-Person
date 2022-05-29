@@ -45,7 +45,7 @@ const Navbar = (props) => {
         return (
             <>
             <a href='https://face-reco-1.herokuapp.com/'>
-            <li><Link className={className}   onClick={() => setHamburgerOpen(!hamburgerOpen)}>Find Person</Link></li>
+            <li className={className}    onClick={() => setHamburgerOpen(!hamburgerOpen)}>Find Person</li>
 
             </a>
                 <li><Link className={className} to='/reportperson' onClick={() => setHamburgerOpen(!hamburgerOpen)}>Report Person</Link></li>
